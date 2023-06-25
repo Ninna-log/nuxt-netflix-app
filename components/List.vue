@@ -1,7 +1,6 @@
 <template>
   <div class="items-list">
     <slot></slot>
-
     <div class="items" data-test="items">
       <Item
         v-for="item in items"
@@ -11,7 +10,6 @@
         :image-src="getImg(item.poster_path ?? item.profile_path)"
       />
     </div>
-
     <p class="scroll-hint">Scroll for more &rarr;</p>
   </div>
 </template>

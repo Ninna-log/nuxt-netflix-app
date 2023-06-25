@@ -1,4 +1,5 @@
 <template>
+  <RouterLink to="/" class="back">&larr; Back to home</RouterLink>
   <Detail
     v-if="!state.isLoading"
     :name="state.item.title"
@@ -29,8 +30,7 @@ onMounted(async () => {
   state.imgUrl = state.item?.poster_path
     ? `${config.public.imgBaseUrl}/${state.item?.poster_path}`
     : "https://via.placeholder.com/300x500";
-  console.log(state.item);
-  console.log(state.imgUrl);
+
   state.isLoading = false;
 });
 </script>

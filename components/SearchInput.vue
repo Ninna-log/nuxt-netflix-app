@@ -1,24 +1,21 @@
 <template>
   <div class="search-shows">
-    <label>Search your favorite Tv/Movie</label>
-    <input
-      data-test="search-input"
-      type="text"
-      placeholder="Search show"
+    <v-text-field
       v-model="state.query"
+      type="text"
+      label="Search for your next tv/Movie"
+      variant="outlined"
+      clearable
     />
-
     <div class="loading" v-show="state.isLoading">
       <Loader />
     </div>
-
     <List
       v-if="!state.isLoading"
       data-test="search-results"
       class="search-results"
       :items="state.items"
     >
-      <h2>Search results</h2>
     </List>
   </div>
 </template>

@@ -1,15 +1,18 @@
 <template>
   <div class="detail-item">
-    <RouterLink to="/" class="back">&larr; Back to all shows</RouterLink>
-
-    <h1 data-test="name">{{ name }}</h1>
-    <p data-test="genres" class="genres">
-      Genres: {{ genres ? genres[0]?.name : null }}
-    </p>
-    <div class="content">
-      <img data-test="cover" class="cover" :src="imageSrc" />
-      <div data-test="summary" class="summary" v-html="summary"></div>
-    </div>
+    <slot></slot>
+    <v-card loading :title="name" :subtitle="genres ? genres[0]?.name : ''">
+      <v-container>
+        <v-row>
+          <v-col cols="12" sm="4">
+            <v-img :width="300" aspect-ratio="16/9" cover :src="imageSrc" />
+          </v-col>
+          <v-col>
+            <div data-test="summary" class="summary" v-html="summary" />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-card>
   </div>
 </template>
 
