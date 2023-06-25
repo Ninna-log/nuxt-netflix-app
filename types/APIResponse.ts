@@ -1,8 +1,8 @@
-import { Item } from "./Item";
+import { Show } from "./Show";
 
 export type APIResponse = {
   page: number;
-  results: Item[];
+  results: Show[];
   total_pages: number;
   total_results: number;
 };

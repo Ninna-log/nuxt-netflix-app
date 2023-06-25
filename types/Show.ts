@@ -1,4 +1,4 @@
-export type Item = {
+export type Show = {
   id: number;
   title: string;
   genres: {

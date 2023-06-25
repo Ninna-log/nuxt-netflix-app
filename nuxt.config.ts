@@ -8,4 +8,9 @@ export default defineNuxtConfig({
       imgBaseUrl: "",
     },
   },
+  vite: {
+    optimizeDeps: {
+      exclude: ["date-fns"],
+    },
+  },
 });
